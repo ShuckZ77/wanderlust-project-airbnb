@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+  <h1 class="my-3">EDIT THIS LISTING</h1>
+
+  <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="row g-1 needs-validation" novalidate enctype="multipart/form-data">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="listing[title]" id="title" class="form-control" value="<%= listing.title %>" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Description</label>
+      <input type="text" name="listing[description]" id="email" class="form-control"  value="<%= listing.description %>" required>
+    </div>
+
+    <div>
+      Original Listing Image <br>
+      <img src="<%= listing.image.url %>" alt="listingimage" style="height: 200px; width: 300px;">      
+    </div>
+    <br>
+    <div class="mb-3">
+      <label for="image" class="form-label">Upload New Image</label>
+      <input type="file" name="listing[image]" id="image" class="form-control" >
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" name="listing[price]" id="price" class="form-control" value="<%= listing.price %>" required>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" name="listing[location]" id="location" class="form-control" value="<%= listing.location %>" required>
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Country</label>
+      <input type="text" name="listing[country]" id="country" class="form-control" value="<%= listing.country %>" required>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary mb-3">SAVE</button>
+  </form>   
+
+</body>

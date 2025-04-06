@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') -%>
+  <body>
+    <h1 class="my-3">CREATE A NEW LISTING</h1>
+
+    <form method="POST" action="/listings" class="row g-1 needs-validation" novalidat enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="listing[title]" id="title" class="form-control" placeholder="Please enter title" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Description</label>
+        <input type="text" name="listing[description]" id="email" class="form-control" placeholder="Please enter description" required>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" name="listing[image]" id="image" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="listing[price]" id="price" class="form-control" placeholder="Please enter price" required>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="listing[location]" id="location" class="form-control" placeholder="Please enter location" required>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" name="listing[country]" id="country" class="form-control" placeholder="Please enter country" required>
+      </div>
+
+      <br>
+
+      <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+    </form>   
+  </body>
+</html>
