@@ -54,7 +54,7 @@ const store = MongoStore.create({
         secret: presence.env.SECRET
     },
     touchAfter: 24*3600
-  })
+})
 
 const sessionOptions = {
     store: store,
