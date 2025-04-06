@@ -51,14 +51,14 @@ async function main() {
 const store = MongoStore.create({
     mongoUrl: dbURL,
     crypto: {
-        secret: presence.env.SECRET
+        secret: process.env.SECRET
     },
     touchAfter: 24*3600
-})
+  })
 
 const sessionOptions = {
     store: store,
-    secret: presence.env.SECRET,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -100,7 +100,6 @@ app.use((req, res, next) => {
 const listingsRouter = require("./routes/listings");
 const reviewsRouter = require("./routes/reviews");
 const userRouter = require("./routes/user");
-const { presence } = require('./schema/listingSchema');
 
 //===================================================================================================
 
